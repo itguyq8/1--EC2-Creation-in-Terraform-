@@ -1,0 +1,15 @@
+creating EC2 Instance: VPCIdNotSpecified: No default VPC for this user. GroupName is only supported for EC2-Classic and default VPC.
+
+provider "aws" {
+        region = "us-east-1"
+               }
+resource "aws_instance" "Linux_Server"{
+          ami               = "ami-06640050dc3f556bb"  # AMI ID for RHEL OS
+          instance_type     = "t2.micro"               # Instance Type 
+          availability_zone = "us-east-1d"	       # Datacenter 	  
+		    
+             tags = {
+                       Name = "RedHat_Linux_Server"    # Instance Name
+                    }
+}
+
